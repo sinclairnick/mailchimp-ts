@@ -7,7 +7,7 @@
     "generate": "openapi -i https://api.mailchimp.com/schema/3.0/Swagger.json?expand -o ./src/generated --name mailchimp --client axios  --useOptions --useUnionTypes --postfix Api",
     "test": "jest",
     "build": "tsc",
-    "publish": "npm run build && npm publish"
+    "deploy": "npm run build && npm publish"
   },
   "dependencies": {
     "@types/node": "^18.6.1",
