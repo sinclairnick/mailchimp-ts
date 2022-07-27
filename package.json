@@ -1,0 +1,23 @@
+{
+  "name": "mailchimp-ts",
+  "version": "1.0.0",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "scripts": {
+    "generate": "openapi -i https://api.mailchimp.com/schema/3.0/Swagger.json?expand -o ./src/generated --name mailchimp --client axios  --useOptions --useUnionTypes --postfix Api",
+    "test": "jest",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/node": "^18.6.1",
+    "axios": "^0.27.2",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3",
+    "openapi-typescript-codegen": "^0.23.0",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  }
+}
