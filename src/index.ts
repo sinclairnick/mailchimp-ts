@@ -1,6 +1,6 @@
 import { mailchimp as _mailchimp } from "./generated";
 
-type MailchimpArgs =
+export type MailchimpArgs =
   | {
       accessToken: string;
       server: string;
@@ -10,7 +10,9 @@ type MailchimpArgs =
       server: string;
     };
 
-export const createMailchimp = (args: MailchimpArgs) => {
+export type MailchimpApi = InstanceType<typeof _mailchimp>;
+
+export const createMailchimp = (args: MailchimpArgs): MailchimpApi => {
   const baseUrl = `https://${args.server}.api.mailchimp.com/3.0/`;
   const token = "accessToken" in args ? args.accessToken : args.apiKey;
   const authHeader = `Bearer ${token}`;
